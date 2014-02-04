@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Z-Coin</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="store">Black Market</string>
+    <string name="friends_list">Survivors</string>
+    <string name="history">Scary Stories</string>
+    <string name="mine">Leave the Shelter</string>
+    <string name="title_activity_mine">The Outside World</string>
+    <string name="timer">How Long</string>
+    <string name="get_started">To get started, log in using Facebook</string>
+    <string name="title_activity_friends_list">Survivors</string>
+
+</resources>
