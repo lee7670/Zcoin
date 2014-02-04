@@ -26,7 +26,6 @@ public class Splash extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
         prefs = getPreferences(MODE_PRIVATE);
-        prefs.edit().clear().commit();
 
         if (prefs.getBoolean("logged_in", false)) {
             new Handler().postDelayed(new Runnable() {
@@ -57,6 +56,7 @@ public class Splash extends Activity {
         editor = prefs.edit();
         TelephonyManager tMgr = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
         String mPhoneNumber = tMgr.getLine1Number();
+        new DownloadWebpageTask().execute("http://54.201.221.41/" + mPhoneNumber, "POST", "data=" + 0);
         editor.putBoolean("logged_in", true);
         editor.putString("id", mPhoneNumber);
         MainActivity.id = mPhoneNumber;

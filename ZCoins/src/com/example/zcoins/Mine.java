@@ -80,7 +80,7 @@ public class Mine extends Activity implements SensorEventListener {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		coinBroadcast c = new coinBroadcast();
+		//coinBroadcast c = new coinBroadcast();
 		TextView myTextView = (TextView) findViewById(R.id.coin_count);
 		myTextView.setText("Z-Coins:" + coins);
 		mSensorManager.registerListener(this, mAccelerometer,
@@ -120,6 +120,8 @@ public class Mine extends Activity implements SensorEventListener {
 	public static void addCoins(int i) {
 		coins += i;
 		coinBalanceText.setText("Z-Coins:" + coins);
+        MainActivity.editor.putInt("balance", coins);
+        MainActivity.editor.commit();
         new DownloadWebpageTask().execute("http://54.201.221.41/" + MainActivity.id, "PUT", "data=" + coins);
 	}
 

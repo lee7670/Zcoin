@@ -22,8 +22,6 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         prefs = getPreferences(MODE_PRIVATE);
         editor = prefs.edit();
-        editor.clear();
-        editor.commit();
         id = prefs.getString("id", "");
         setContentView(R.layout.activity_main);
     }

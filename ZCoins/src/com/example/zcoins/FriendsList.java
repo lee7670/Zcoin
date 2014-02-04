@@ -15,7 +15,7 @@ public class FriendsList extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_friends_list);
-		// Show the Up button in the action bar.  
+		// Show the Up button in the action bar.
 		setupActionBar();
 		ListView l=(ListView) findViewById(R.id.list);
 		String[] names= new String[]{"Teddy", "Kai","Jared", "Angel"};
