@@ -104,13 +104,11 @@ public class HTTPHandler {
 			InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 			BufferedReader n = new BufferedReader(new InputStreamReader(in));
 			String s = n.readLine();
-			System.out.println(s);
 			JSONObject j= new JSONObject(s);
 			String name = j.getJSONObject("person").getString("first_name");
 			urlConnection.disconnect();
 			return name;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
