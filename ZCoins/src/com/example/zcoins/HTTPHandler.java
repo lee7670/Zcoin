@@ -94,4 +94,25 @@ public class HTTPHandler {
 
 		}
 	}
+	
+	public static String andrewLogin(String id)
+	{
+		try {
+			URL url = new URL("https://apis.scottylabs.org/v1/directory/andrewid/"+id+"?app_id=4f1a9d9b-7371-4e1e-a341-bec378758df4&app_secret_key=bycS-13IQHkW4ODCS0ThwLchS7nbMh_Fjq1YkE92oGdK2ez9UdByPMPN");
+			HttpURLConnection urlConnection = (HttpURLConnection) url
+					.openConnection();
+			InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+			BufferedReader n = new BufferedReader(new InputStreamReader(in));
+			String s = n.readLine();
+			System.out.println(s);
+			JSONObject j= new JSONObject(s);
+			String name = j.getJSONObject("person").getString("first_name");
+			urlConnection.disconnect();
+			return name;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 }
